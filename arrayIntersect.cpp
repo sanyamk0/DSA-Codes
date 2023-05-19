@@ -1,11 +1,13 @@
 // 2Pointer Approach Used here
 // Arrays are given to be sorted in non-decreasing order
+// For Testing Purpose we need to fill elements in array in increasing order
+// Or We can implement a sorting method on both arrays before checking
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int ans = 0;
+    int ans = -1;
     int n, m;
     cout << "Enter Size of First Array: ";
     cin >> n;
@@ -25,7 +27,6 @@ int main()
     }
 
     int i = 0, j = 0;
-    cout << "Common Elements in Both Arrays are: ";
     while (i < n && j < m)
     {
         if (arr1[i] == arr2[j])
@@ -43,6 +44,9 @@ int main()
             j++;
         }
     }
-
+    if (ans == -1) // If until now ans = -1 it means no element was found common
+    {
+        cout << "-1";
+    }
     return 0;
 }
